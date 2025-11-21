@@ -38,6 +38,8 @@ class Solution:
 
         return steps
 ```
+<img width="1920" height="626" alt="image" src="https://github.com/user-attachments/assets/76b64210-c90a-4df5-88de-372ba5eb10cf" />
+
 ### Методология - Решение с помощью жадного алгоритма
 При обходе массива слева направо отслеживаются:
 
@@ -60,6 +62,8 @@ class Solution:
 
         return paskal_str
 ```
+<img width="1920" height="618" alt="image" src="https://github.com/user-attachments/assets/be549526-1af3-4516-a158-543794549f03" />
+
 ### Методология - основывается на вычислении элементов строки через биномиальные коэффициенты
 
 ***
@@ -76,6 +80,8 @@ class Solution:
             else: max_stonks = max(max_stonks, price - min_price)
         return max_stonks
 ```
+<img width="1920" height="616" alt="image" src="https://github.com/user-attachments/assets/aa46e78b-6e32-4183-87e8-4158578d647f" />
+
 ### Методология - Решение с помощью жадного алгоритма
 - При обходе каждого значения <kbd>price</kbd> по массиву <kbd>prices</kbd> выполняется сравнение с <kbd>min_price</kbd>.
 
@@ -106,6 +112,8 @@ class Solution:
         stonks += max(0, max_price-min_price)
         return stonks
 ```
+<img width="1920" height="610" alt="image" src="https://github.com/user-attachments/assets/31bb36c5-2812-415c-a77e-ee7c21abbe0b" />
+
 ### Методология - Решение с помощью жадного алгоритма
 В цикле для каждой текущей цены <kbd>price</kbd> происходят проверки:
 
