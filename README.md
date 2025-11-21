@@ -14,6 +14,8 @@ class Solution:
 
         return fun(n, arr)
 ```
+<img width="1907" height="629" alt="image" src="https://github.com/user-attachments/assets/4fd3096c-51b5-4d59-a2f8-ea8bba66ea66" />
+
 ### Методология - Решение с помощью рекурсии включающей запоминание промежуточных результатов (мемоизацию), что является реализацией динамического программирования
 
 ***
