@@ -44,3 +44,40 @@ class Solution:
 - <kbd>index_max_step</kbd> — граница текущего прыжка, после достижения которой нужно сделать следующий прыжок.
 
 - Счётчик прыжков <kbd>steps</kbd> увеличивается при достижении границы прыжка.
+
+***
+
+## Задача 3 - Pascal’s Triangle 2
+```python
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        paskal_str = [1]
+
+        for i in range(1, rowIndex + 1):
+            paskal_str.append(paskal_str[-1] * (rowIndex - i + 1) // i)
+
+        return paskal_str
+```
+### Методология - основывается на вычислении элементов строки через биномиальные коэффициенты
+
+***
+
+## Задача 4 - Best time to buy and sell stock 1
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = 10001
+        max_stonks = 0
+
+        for price in prices:
+            if price < min_price: min_price = price
+            else: max_stonks = max(max_stonks, price - min_price)
+        return max_stonks
+```
+### Методология - Решение с помощью жадного алгоритма
+- При обходе каждого значения <kbd>price</kbd> по массиву <kbd>prices</kbd> выполняется сравнение с <kbd>min_price</kbd>.
+
+- Если текущая цена меньше <kbd>min_price</kbd>, значит, найден новый минимум (лучшая цена для покупки), и <kbd>min_price</kbd> обновляется.
+
+- Если цена выше или равна <kbd>min_price</kbd>, считается потенциальная прибыль <kbd>price</kbd> - <kbd>min_price</kbd>. Если она больше текущей максимальной прибыли, обновляем <kbd>max_stonks</kbd>.
+***
