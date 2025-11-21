@@ -1,4 +1,5 @@
 # pavlov_homework_fun_prog
+## Задача 1 - Climbing Stairs
 ```python
 class Solution:
     def climbStairs(self, n: int) -> int:
@@ -13,3 +14,4 @@ class Solution:
 
         return fun(n, arr)
 ```
+### Методология - Использование с помощью рекурсии включающей запоминание промежуточных результатов (мемоизацию), что является реализацией динамического программирования
