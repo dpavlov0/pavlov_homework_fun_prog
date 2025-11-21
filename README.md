@@ -79,5 +79,40 @@ class Solution:
 
 - Если текущая цена меньше <kbd>min_price</kbd>, значит, найден новый минимум (лучшая цена для покупки), и <kbd>min_price</kbd> обновляется.
 
-- Если цена выше или равна <kbd>min_price</kbd>, считается потенциальная прибыль <kbd>price</kbd> - <kbd>min_price</kbd>. Если она больше текущей максимальной прибыли, обновляем <kbd>max_stonks</kbd>.
+- Если цена выше или равна <kbd>min_price</kbd>, считается потенциальная прибыль <kbd>price - min_price</kbd>. Если она больше текущей максимальной прибыли, обновляем <kbd>max_stonks</kbd>.
+
 ***
+
+## Задача 5 - Best time to buy and sell stock 2
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = 10001
+        max_price = 0
+        stonks = 0
+        for price in prices:
+
+            if price < min_price and price >= max_price:
+                min_price = price
+            else:
+                if max_price > price:
+                    stonks += max_price-min_price
+                    min_price = price
+                    max_price = 0
+                else:
+                    max_price = price
+        stonks += max(0, max_price-min_price)
+        return stonks
+```
+### Методология - Решение с помощью жадного алгоритма
+В цикле для каждой текущей цены <kbd>price</kbd> происходят проверки:
+
+- Если цена стала меньше текущего минимума и при этом не меньше максимума, обновляется минимум — начало новой "покупки".
+
+- Иначе проверяется падение цены относительно максимума — значит, пора "продать" и зафиксировать прибыль: к <kbd>stonks</kbd> добавляется разница <kbd>max_price - min_price</kbd>, и лимиты (минимум и максимум) сбрасываются для следующей сделки.
+
+- Если цена повышается, <kbd>max_price</kbd> обновляется — это потенциальный максимум для текущей сделки.
+
+***
+
+
